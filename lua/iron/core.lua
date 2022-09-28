@@ -581,7 +581,7 @@ core.setup = function(opts)
   end
 
   if config.should_map_plug then
-    vim.deprecate("config.should_map_plug", "core.setup{keymaps = {...}}", "3.1", "iron.nvim")
+    -- vim.deprecate("config.should_map_plug", "core.setup{keymaps = {...}}", "3.1", "iron.nvim")
     for key, keymap in pairs(named_maps) do
       local mapping = vim.deepcopy(keymap)
       table.insert(mapping, 2, "<plug>(iron-" .. snake_to_kebab(key) .. ")")
